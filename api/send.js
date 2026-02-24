@@ -88,7 +88,7 @@ export default async function handler(req, res) {
     });
   }
 
-  const formType = body.form_type || body["form_type"] || "";
+  const formType = String(body.form_type || body["form_type"] || "").toLowerCase();
   const date = body.Datum || body.Date || "";
   const time = body.Uhrzeit || body.Time || "";
   const guests = body["Anzahl der Personen"] || body.Personen || body["Gäste"] || "";
