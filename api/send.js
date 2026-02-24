@@ -65,7 +65,7 @@ export default async function handler(req, res) {
   if (typeof body === "string") {
     try {
       body = JSON.parse(body);
-    } catch (e) {
+    } catch (_) {
       body = Object.fromEntries(new URLSearchParams(body));
     }
   }
@@ -89,70 +89,67 @@ export default async function handler(req, res) {
   }
 
   const formType = String(body.form_type || body["form_type"] || "").toLowerCase();
-  const date = body.Datum || body.Date || "";
-  const time = body.Uhrzeit || body.Time || "";
-  const guests = body["Anzahl der Personen"] || body.Personen || body["Gäste"] || "";
-  const order = body["Ihre Bestellung"] || body.Bestellung || "";
-
   const isReservation = formType === "reservation";
-const isOrder = formType === "order";
+  const isOrder = formType === "order";
 
-let subject = "Bestätigung – Ristorante Amalfi";
-let htmlContent = "";
+  let subject = "Bestätigung – Ristorante Amalfi";
+  let htmlContent = "";
 
-if (isReservation) {
-  subject = "Reservierungsanfrage erhalten – Ristorante Amalfi";
+  if (isReservation) {
+    subject = "Reservierungsanfrage erhalten – Ristorante Amalfi";
+    htmlContent = `
+      <div style="font-family: Arial, sans-serif; line-height:1.6; color:#222;">
+        <p>Vielen Dank für Ihre Reservierungsanfrage.</p>
 
-  htmlContent = `
-    <div style="font-family: Arial, sans-serif; line-height:1.6; color:#222;">
-      <p>Vielen Dank für Ihre Reservierungsanfrage.</p>
+        <p>
+          Wir haben Ihre Anfrage erhalten und prüfen diese schnellstmöglich.
+          Die Reservierung ist erst nach unserer persönlichen Bestätigung verbindlich.
+        </p>
 
-      <p>
-        Wir haben Ihre Anfrage erhalten und prüfen diese schnellstmöglich.
-        Die Reservierung ist erst nach unserer persönlichen Bestätigung verbindlich.
-      </p>
+        <p style="margin-top:20px;">
+          Ristorante Amalfi<br>
+          Dinkelsbühl
+        </p>
+      </div>
+    `;
+  } else if (isOrder) {
+    subject = "Bestellung eingegangen – Ristorante Amalfi";
+    htmlContent = `
+      <div style="font-family: Arial, sans-serif; line-height:1.6; color:#222;">
+        <p>Vielen Dank für Ihre Bestellung!</p>
 
-      <p style="margin-top:20px;">
-        Ristorante Amalfi<br>
-        Dinkelsbühl
-      </p>
-    </div>
-  `;
-}
+        <p>
+          Wir haben Ihre Bestellung erhalten und bearbeiten diese umgehend.
+          Sollten Rückfragen bestehen, melden wir uns telefonisch oder per E-Mail.
+        </p>
 
-if (isOrder) {
-  subject = "Bestellung eingegangen – Ristorante Amalfi";
-
-  htmlContent = `
-    <div style="font-family: Arial, sans-serif; line-height:1.6; color:#222;">
-      <p>Vielen Dank für Ihre Bestellung!</p>
-
-      <p>
-        Wir haben Ihre Bestellung erhalten und bearbeiten diese umgehend.
-        Sollten Rückfragen bestehen, melden wir uns telefonisch oder per E-Mail.
-      </p>
-
-      <p style="margin-top:20px;">
-        Ristorante Amalfi<br>
-        Dinkelsbühl
-      </p>
-    </div>
-  `;
-}
-  const details = [
-    date ? `<p><b>Datum:</b> ${date}</p>` : "",
-    time ? `<p><b>Uhrzeit:</b> ${time}</p>` : "",
-    guests ? `<p><b>Personen:</b> ${guests}</p>` : "",
-    order ? `<p><b>Bestellung:</b><br>${String(order).replace(/\n/g, "<br>")}</p>` : "",
-  ].join("");
+        <p style="margin-top:20px;">
+          Ristorante Amalfi<br>
+          Dinkelsbühl
+        </p>
+      </div>
+    `;
+  } else {
+    // ✅ fallback, если form_type не пришёл
+    subject = "Bestätigung – Ristorante Amalfi";
+    htmlContent = `
+      <div style="font-family: Arial, sans-serif; line-height:1.6; color:#222;">
+        <p>Vielen Dank! Wir haben Ihre Anfrage erhalten.</p>
+        <p style="margin-top:20px;">
+          Ristorante Amalfi<br>
+          Dinkelsbühl
+        </p>
+      </div>
+    `;
+  }
 
   try {
     await resend.emails.send({
-  from: "Ristorante Amalfi <info@amalfi-ristorante.de>",
-  to: toEmail,
-  subject,
-  html: htmlContent,
-});
+      from: "Ristorante Amalfi <info@amalfi-ristorante.de>",
+      to: toEmail,
+      subject,
+      html: htmlContent,
+    });
 
     return res.status(200).json({ ok: true });
   } catch (e) {
