@@ -94,13 +94,51 @@ export default async function handler(req, res) {
   const guests = body["Anzahl der Personen"] || body.Personen || body["Gäste"] || "";
   const order = body["Ihre Bestellung"] || body.Bestellung || "";
 
-  const subject =
-    formType === "reservation"
-      ? "Ihre Reservierung – Ristorante Amalfi"
-      : formType === "order"
-      ? "Ihre Bestellung – Ristorante Amalfi"
-      : "Bestätigung – Ristorante Amalfi";
+  const isReservation = formType === "reservation";
+const isOrder = formType === "order";
 
+let subject = "Bestätigung – Ristorante Amalfi";
+let htmlContent = "";
+
+if (isReservation) {
+  subject = "Reservierungsanfrage erhalten – Ristorante Amalfi";
+
+  htmlContent = `
+    <div style="font-family: Arial, sans-serif; line-height:1.6; color:#222;">
+      <p>Vielen Dank für Ihre Reservierungsanfrage.</p>
+
+      <p>
+        Wir haben Ihre Anfrage erhalten und prüfen diese schnellstmöglich.
+        Die Reservierung ist erst nach unserer persönlichen Bestätigung verbindlich.
+      </p>
+
+      <p style="margin-top:20px;">
+        Ristorante Amalfi<br>
+        Dinkelsbühl
+      </p>
+    </div>
+  `;
+}
+
+if (isOrder) {
+  subject = "Bestellung eingegangen – Ristorante Amalfi";
+
+  htmlContent = `
+    <div style="font-family: Arial, sans-serif; line-height:1.6; color:#222;">
+      <p>Vielen Dank für Ihre Bestellung!</p>
+
+      <p>
+        Wir haben Ihre Bestellung erhalten und bearbeiten diese umgehend.
+        Sollten Rückfragen bestehen, melden wir uns telefonisch oder per E-Mail.
+      </p>
+
+      <p style="margin-top:20px;">
+        Ristorante Amalfi<br>
+        Dinkelsbühl
+      </p>
+    </div>
+  `;
+}
   const details = [
     date ? `<p><b>Datum:</b> ${date}</p>` : "",
     time ? `<p><b>Uhrzeit:</b> ${time}</p>` : "",
@@ -110,21 +148,11 @@ export default async function handler(req, res) {
 
   try {
     await resend.emails.send({
-      from: "Ristorante Amalfi <onboarding@resend.dev>",
-      to: toEmail,
-      subject,
-      html: `
-        <div style="font-family: Arial, sans-serif; line-height:1.5; color:#222;">
-          <h2 style="margin:0 0 10px;">Vielen Dank${name ? `, ${name}` : ""}!</h2>
-          <p style="margin:0 0 12px;">
-            Ihre Anfrage ist bei uns eingegangen und wurde automatisch bestätigt.
-            Wir melden uns nur, falls Rückfragen bestehen.
-          </p>
-          ${details}
-          <p style="margin:16px 0 0;">Ristorante Amalfi<br>Dinkelsbühl</p>
-        </div>
-      `,
-    });
+  from: "Ristorante Amalfi <info@amalfi-ristorante.de>",
+  to: toEmail,
+  subject,
+  html: htmlContent,
+});
 
     return res.status(200).json({ ok: true });
   } catch (e) {
