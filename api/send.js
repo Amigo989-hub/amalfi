@@ -61,7 +61,12 @@ export default async function handler(req, res) {
   const to = pickEmail(body);
   const name = pickName(body);
 
+    const to = pickEmail(body);
+
   if (!to) {
+    if (body?.test) {
+      return res.status(200).json({ ok: true, mode: "tilda_test" });
+    }
     return res.status(400).json({
       error: "Нет email в данных формы",
       received_keys: Object.keys(body),
