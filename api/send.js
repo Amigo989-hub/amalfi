@@ -44,6 +44,7 @@ module.exports = async (req, res) => {
 
   let body = req.body || {};
 
+  // If body comes as string: try JSON, else form-urlencoded
   if (typeof body === 'string') {
     try {
       body = JSON.parse(body);
@@ -116,13 +117,12 @@ module.exports = async (req, res) => {
     `;
   }
 
-   try {
+  try {
     const payload = {
-      // ОБЯЗАТЕЛЬНО: здесь должен быть домен, который ты верифицировал в Resend
-      // Пример после верификации домена:
+      // В production лучше указать свой верифицированный домен в Resend:
       // from: 'Ristorante Amalfi <bestellung@dein-domain.de>',
-      from: 'Ristorante Amalfi <onboarding@resend.dev>', // временно, пока не настроен свой домен
-      to: [toEmail], // безопаснее явно указать массив
+      from: 'Ristorante Amalfi <onboarding@resend.dev>',
+      to: [toEmail],
       subject,
       html: htmlContent,
     };
@@ -133,7 +133,9 @@ module.exports = async (req, res) => {
 
     if (error) {
       console.error('RESEND API ERROR:', error);
-      return res.status(500).json({ error: 'Email send failed', details: String(error.message || error) });
+      return res
+        .status(500)
+        .json({ error: 'Email send failed', details: String(error.message || error) });
     }
 
     console.log('RESEND API SUCCESS:', data);
@@ -142,8 +144,5 @@ module.exports = async (req, res) => {
   } catch (e) {
     console.error('RESEND EXCEPTION:', e);
     return res.status(500).json({ error: 'Email send failed (exception)' });
-  }
-    console.error('RESEND ERROR:', e);
-    return res.status(500).json({ error: 'Email send failed' });
   }
 };
