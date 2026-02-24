@@ -47,7 +47,6 @@ export default async function handler(req, res) {
   }
 
   let body = req.body || {};
-  ...
 }
 
   // 🔥 Важно: Tilda иногда шлёт не JSON, а form-urlencoded.
