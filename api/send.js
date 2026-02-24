@@ -143,17 +143,20 @@ export default async function handler(req, res) {
     `;
   }
 
-  try {
-    await resend.emails.send({
-      from:"Ristorante Amalfi <onboarding@resend.dev>"
-      to: toEmail,
-      subject,
-      html: htmlContent,
-    });
+ try {
+  const payload = {
+    from: "Ristorante Amalfi <onboarding@resend.dev>", // временно для теста
+    to: toEmail,
+    subject: subject,
+    html: htmlContent,
+  };
 
-    return res.status(200).json({ ok: true });
-  } catch (e) {
-    console.error("RESEND ERROR:", e);
-    return res.status(500).json({ error: "Email send failed" });
-  }
+  console.log("RESEND PAYLOAD:", payload);
+
+  await resend.emails.send(payload);
+
+  return res.status(200).json({ ok: true });
+} catch (e) {
+  console.error("RESEND ERROR:", e);
+  return res.status(500).json({ error: "Email send failed" });
 }
