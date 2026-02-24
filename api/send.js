@@ -145,7 +145,7 @@ export default async function handler(req, res) {
 
   try {
     await resend.emails.send({
-      from: "Ristorante Amalfi <info@amalfi-ristorante.de>",
+      from:"Ristorante Amalfi <onboarding@resend.dev>"
       to: toEmail,
       subject,
       html: htmlContent,
