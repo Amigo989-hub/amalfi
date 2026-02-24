@@ -1,4 +1,4 @@
-import { Resend } from "resend";
+const { Resend } = require("resend");
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
@@ -29,26 +29,20 @@ function pickEmail(body) {
   return "";
 }
 
-export const config = {
-  api: {
-    bodyParser: { sizeLimit: "1mb" },
-  },
-};
-
-export default async function handler(req, res) {
-  // Healthcheck / Tilda URL check
+module.exports = async (req, res) => {
+  // healthcheck
   if (req.method === "GET") {
     return res.status(200).json({ ok: true, mode: "healthcheck" });
   }
 
-  // Allow other methods so Tilda doesn't complain "URL not available"
+  // allow other methods for tilda URL checks
   if (req.method !== "POST") {
     return res.status(200).json({ ok: true, mode: "method_ok_for_tilda" });
   }
 
   let body = req.body || {};
 
-  // If body comes as string: try JSON, else form-urlencoded
+  // if body comes as string
   if (typeof body === "string") {
     try {
       body = JSON.parse(body);
@@ -60,7 +54,7 @@ export default async function handler(req, res) {
   console.log("TILDA BODY KEYS:", Object.keys(body));
   console.log("TILDA BODY SAMPLE:", body);
 
-  // Tilda test ping
+  // tilda test ping
   if (body && body.test) {
     return res.status(200).json({ ok: true, mode: "tilda_test" });
   }
@@ -79,63 +73,50 @@ export default async function handler(req, res) {
   const isOrder = formType === "order";
 
   let subject = "Bestätigung – Ristorante Amalfi";
-  let htmlContent = `
+  let html = `
     <div style="font-family: Arial, sans-serif; line-height:1.6; color:#222;">
       <p>Vielen Dank! Wir haben Ihre Anfrage erhalten.</p>
-      <p style="margin-top:20px;">
-        Ristorante Amalfi<br>
-        Dinkelsbühl
-      </p>
+      <p style="margin-top:20px;">Ristorante Amalfi<br>Dinkelsbühl</p>
     </div>
   `;
 
   if (isReservation) {
     subject = "Reservierungsanfrage erhalten – Ristorante Amalfi";
-    htmlContent = `
+    html = `
       <div style="font-family: Arial, sans-serif; line-height:1.6; color:#222;">
         <p>Vielen Dank für Ihre Reservierungsanfrage.</p>
         <p>
           Wir haben Ihre Anfrage erhalten und prüfen diese schnellstmöglich.
           Die Reservierung ist erst nach unserer persönlichen Bestätigung verbindlich.
         </p>
-        <p style="margin-top:20px;">
-          Ristorante Amalfi<br>
-          Dinkelsbühl
-        </p>
+        <p style="margin-top:20px;">Ristorante Amalfi<br>Dinkelsbühl</p>
       </div>
     `;
   } else if (isOrder) {
     subject = "Bestellung eingegangen – Ristorante Amalfi";
-    htmlContent = `
+    html = `
       <div style="font-family: Arial, sans-serif; line-height:1.6; color:#222;">
         <p>Vielen Dank für Ihre Bestellung!</p>
         <p>
           Wir haben Ihre Bestellung erhalten und bearbeiten diese umgehend.
           Sollten Rückfragen bestehen, melden wir uns telefonisch oder per E-Mail.
         </p>
-        <p style="margin-top:20px;">
-          Ristorante Amalfi<br>
-          Dinkelsbühl
-        </p>
+        <p style="margin-top:20px;">Ristorante Amalfi<br>Dinkelsbühl</p>
       </div>
     `;
   }
 
   try {
-    const payload = {
-      from: "Ristorante Amalfi <onboarding@resend.dev>", // временно для теста
+    await resend.emails.send({
+      from: "Ristorante Amalfi <onboarding@resend.dev>", // для теста
       to: toEmail,
-      subject: subject,
-      html: htmlContent,
-    };
-
-    console.log("RESEND PAYLOAD:", payload);
-
-    await resend.emails.send(payload);
+      subject,
+      html,
+    });
 
     return res.status(200).json({ ok: true });
   } catch (e) {
     console.error("RESEND ERROR:", e);
     return res.status(500).json({ error: "Email send failed" });
   }
-}
+};
