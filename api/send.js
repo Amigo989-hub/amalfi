@@ -1,5 +1,4 @@
 // api/send.js
-// Node / Vercel Serverless Function (CommonJS)
 
 const { Resend } = require('resend');
 
@@ -45,7 +44,6 @@ module.exports = async (req, res) => {
 
   let body = req.body || {};
 
-  // If body comes as string: try JSON, else form-urlencoded
   if (typeof body === 'string') {
     try {
       body = JSON.parse(body);
@@ -120,9 +118,9 @@ module.exports = async (req, res) => {
 
   try {
     const payload = {
-      from: 'Ristorante Amalfi <onboarding@resend.dev>', // поменяешь позже на свой домен
+      from: 'Ristorante Amalfi <onboarding@resend.dev>', // потом сменишь на свой домен
       to: toEmail,
-      subject: subject,
+      subject,
       html: htmlContent,
     };
 
