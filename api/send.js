@@ -36,9 +36,19 @@ export const config = {
 };
 
 export default async function handler(req, res) {
-  if (req.method !== "POST") {
-    return res.status(405).json({ error: "Method not allowed" });
+  // ✅ пусть GET тоже отвечает 200 (Тильда часто проверяет URL через GET)
+  if (req.method === "GET") {
+    return res.status(200).json({ ok: true, mode: "healthcheck" });
   }
+
+  if (req.method !== "POST") {
+    return res.status(200).json({ ok: true, mode: "method_allowed_for_tilda" });
+    // или 405, но тогда Тильда может говорить "not available"
+  }
+
+  let body = req.body || {};
+  ...
+}
 
   // 🔥 Важно: Tilda иногда шлёт не JSON, а form-urlencoded.
   // В Vercel обычно req.body уже распарсен, но бывает приходит строкой.
