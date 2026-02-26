@@ -121,7 +121,7 @@ module.exports = async (req, res) => {
     const payload = {
       // В production лучше указать свой верифицированный домен в Resend:
       // from: 'Ristorante Amalfi <bestellung@dein-domain.de>',
-      from: 'Ristorante Amalfi <onboarding@resend.dev>',
+      from: 'Ristorante Amalfi <info@amalfi-dinkelsbuehl.de>',
       to: [toEmail],
       subject,
       html: htmlContent,
