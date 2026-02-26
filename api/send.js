@@ -74,8 +74,14 @@ module.exports = async (req, res) => {
   const isReservation = formType === 'reservation';
   const isOrder = formType === 'order';
 
+  // Если это не reservation и не order — НИЧЕГО не шлём, просто ок для Тильды
+  if (!isReservation && !isOrder) {
+    console.log('UNSUPPORTED form_type, SKIP SEND. form_type =', formType);
+    return res.status(200).json({ ok: true, skipped: true, formType });
+  }
+
   let subject = 'Bestätigung – Ristorante Amalfi';
-  let htmlContent = "";
+  let htmlContent = '';
 
   if (isReservation) {
     subject = 'Reservierungsanfrage erhalten – Ristorante Amalfi';
@@ -107,6 +113,12 @@ module.exports = async (req, res) => {
         </p>
       </div>
     `;
+  }
+
+  // Защита от случайной пустоты (на всякий)
+  if (!htmlContent || !htmlContent.trim()) {
+    console.error('EMPTY htmlContent FOR form_type =', formType);
+    return res.status(500).json({ error: 'Empty email template for form_type ' + formType });
   }
 
   try {
