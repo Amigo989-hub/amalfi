@@ -75,16 +75,8 @@ module.exports = async (req, res) => {
   const isOrder = formType === 'order';
 
   let subject = 'Bestätigung – Ristorante Amalfi';
-  let htmlContent = `
-    <div style="font-family: Arial, sans-serif; line-height:1.6; color:#222;">
-      <p>Vielen Dank! Wir haben Ihre Anfrage erhalten.</p>
-      <p style="margin-top:20px;">
-        Ristorante Amalfi<br>
-        Dinkelsbühl
-      </p>
-    </div>
-  `;
-
+  let htmlContent = "";
+  
   if (isReservation) {
     subject = 'Reservierungsanfrage erhalten – Ristorante Amalfi';
     htmlContent = `
