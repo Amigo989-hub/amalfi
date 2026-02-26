@@ -75,7 +75,7 @@ module.exports = async (req, res) => {
   const isOrder = formType === 'order';
 
   let subject = 'Bestätigung – Ristorante Amalfi';
-  let htmlContent = ''; // по умолчанию пусто
+  let htmlContent = "";
 
   if (isReservation) {
     subject = 'Reservierungsanfrage erhalten – Ristorante Amalfi';
@@ -109,16 +109,9 @@ module.exports = async (req, res) => {
     `;
   }
 
-  // Если шаблон не задан (не reservation и не order) — письмо не шлём, но ответ 200, чтобы Тильда была довольна
-  if (!htmlContent || !htmlContent.trim()) {
-    console.log('NO EMAIL TEMPLATE FOR form_type=', formType, '— skipping send');
-    return res.status(200).json({ ok: true, skipped: true });
-  }
-
   try {
     const payload = {
-      // здесь должен быть домен, который верифицирован в Resend
-      from: 'Ristorante Amalfi <info@amalfi-dinkelsbuehl.de>',
+      from: 'Ristorante Amalfi <info@amalfi-dinkelsbuehl.de>', // домен должен быть верифицирован в Resend
       to: [toEmail],
       subject,
       html: htmlContent,
