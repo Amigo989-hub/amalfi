@@ -73,8 +73,8 @@ module.exports = async (req, res) => {
     <div style="font-family: Arial, sans-serif; line-height:1.6; color:#222;">
       <p>Vielen Dank für Ihre Reservierungsanfrage.</p>
       <p>
-        Wir haben Ihre Anfrage erhalten und prüfen diese schnellstmöglich.
-        Die Reservierung ist erst nach unserer persönlichen Bestätigung verbindlich.
+        Ihre Anfrage wurde erfolgreich übermittelt und von uns erhalten.
+        Wir freuen uns, Sie bald im Ristorante Amalfi begrüßen zu dürfen.
       </p>
       <p style="margin-top:20px;">
         Ristorante Amalfi<br>
