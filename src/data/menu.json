@@ -1,0 +1,1157 @@
+[
+  {
+    "title": "Aperitif",
+    "entries": [
+      {
+        "type": "item",
+        "name": "San Bitter",
+        "price": "4,00 €",
+        "description": "ohne Alkohol"
+      },
+      {
+        "type": "item",
+        "name": "Martini Bianco, Rosso",
+        "price": "5,50 €",
+        "description": ""
+      },
+      {
+        "type": "item",
+        "name": "Campari¹ pur, Soda, Orange / Aperol Spritz / Lillet Spritz / Limoncello Spritz / Campari Spritz/Hugo",
+        "price": "5,50 €",
+        "description": ""
+      },
+      {
+        "type": "item",
+        "name": "Campari¹ pur, Soda, Orange",
+        "price": "7,50 €",
+        "description": ""
+      },
+      {
+        "type": "item",
+        "name": "Aperitif Amalfi",
+        "price": "7,50 €",
+        "description": "Prosecco, Orangensaft und Campari"
+      },
+      {
+        "type": "item",
+        "name": "Glas Prosecco",
+        "price": "5,00 €",
+        "description": ""
+      },
+      {
+        "type": "item",
+        "name": "Ramazzotti Rosé",
+        "price": "7,50 €",
+        "description": ""
+      }
+    ]
+  },
+  {
+    "title": "Vorspeisen",
+    "entries": [
+      {
+        "type": "item",
+        "name": "Carpaccio Tartufo",
+        "price": "24,00 €",
+        "description": "mit schwarzem Trüffel"
+      },
+      {
+        "type": "item",
+        "name": "Carpaccio Manzo Classico",
+        "price": "18,00 €",
+        "description": "feine rohe Rindfleischscheiben, Rucola, Parmesan"
+      },
+      {
+        "type": "item",
+        "name": "Vitello Tonnato³/⁴/¹⁰",
+        "price": "17,00 €",
+        "description": "zartes Kalbsfleisch mit Thunfisch-Kapern-Creme"
+      },
+      {
+        "type": "item",
+        "name": "Insalata Mare²/¹⁴",
+        "price": "19,00 €",
+        "description": "Meeresfrüchtesalat"
+      },
+      {
+        "type": "item",
+        "name": "Antipasto Casa",
+        "price": "18,00 €",
+        "description": "gemischte Vorspeise (Gemüse, Vitello Tonnato, Caprese und Bruschetta)"
+      },
+      {
+        "type": "item",
+        "name": "Bruschetta",
+        "price": "9,50 €",
+        "description": "getoastetes Brot mit Tomatenwürfeln, Zwiebeln, Knoblauch, Petersilie und Oregano"
+      },
+      {
+        "type": "item",
+        "name": "Crustini al Salmone affuminato Mozzarella",
+        "price": "12,00 €",
+        "description": "getoastetes Brot gratiniert mit geräuchertem Lachs und Mozzarella"
+      },
+      {
+        "type": "item",
+        "name": "Prosciutto e Melone",
+        "price": "17,00 €",
+        "description": "Parmaschinken und Melone"
+      }
+    ]
+  },
+  {
+    "title": "Suppen",
+    "entries": [
+      {
+        "type": "item",
+        "name": "Tomatensuppe¹/⁷",
+        "price": "7,90 €",
+        "description": ""
+      },
+      {
+        "type": "item",
+        "name": "Minestrone⁹",
+        "price": "7,90 €",
+        "description": "Gemüsesuppe"
+      },
+      {
+        "type": "item",
+        "name": "Zuppa di Porcini (Steinpilzsuppe)",
+        "price": "10,50 €",
+        "description": ""
+      }
+    ]
+  },
+  {
+    "title": "Salate",
+    "entries": [
+      {
+        "type": "item",
+        "name": "Tomatensalat mit roten Zwiebeln und Oregano",
+        "price": "7,90 €",
+        "description": ""
+      },
+      {
+        "type": "item",
+        "name": "Gemischter Salat",
+        "price": "8,90 €",
+        "description": ""
+      },
+      {
+        "type": "item",
+        "name": "Bauernsalat⁷",
+        "price": "15,50 €",
+        "description": "Tomaten, Gurken, Zwiebeln, Oregano, Schafskäse, Oliven und Peperoni auf gemischtem Salat"
+      },
+      {
+        "type": "item",
+        "name": "Thunfischsalat⁴",
+        "price": "15,90 €",
+        "description": "gemischter Salat mit Thunfisch, Zwiebeln und Knoblauch"
+      },
+      {
+        "type": "item",
+        "name": "Art des Hauses³/⁷",
+        "price": "18,00 €",
+        "description": "großer gemischter Salat mit Salami, Hinterschinken, Mozzarella, Ei und Oliven"
+      },
+      {
+        "type": "item",
+        "name": "Insalata di Gamberi²",
+        "price": "19,80 €",
+        "description": "gemischter Salat mit Garnelen"
+      },
+      {
+        "type": "item",
+        "name": "Caprese Bufala⁷",
+        "price": "12,50 €",
+        "description": "Tomatenscheiben mit Büffelmozzarella"
+      },
+      {
+        "type": "item",
+        "name": "Insalata Tacchino",
+        "price": "16,00 €",
+        "description": "gemischter Salat mit Putenbruststreifen gebraten"
+      }
+    ]
+  },
+  {
+    "title": "Pasta",
+    "entries": [
+      {
+        "type": "subtitle",
+        "name": "Strozzapreti¹",
+        "description": ""
+      },
+      {
+        "type": "item",
+        "name": "Piemontese",
+        "price": "18,90 €",
+        "description": "mit Rindfleischstreifen, Steinpilzen, Knoblauch in Tomatensoße"
+      },
+      {
+        "type": "item",
+        "name": "Fumé",
+        "price": "14,00€",
+        "description": "mit Mozzarella, Speck, Tomatensahnesoße \"leicht pikant\""
+      },
+      {
+        "type": "item",
+        "name": "Arrabbiata",
+        "price": "14,90 €",
+        "description": "mit Knoblauch, Petersilie in Tomatensoße „scharf\""
+      },
+      {
+        "type": "item",
+        "name": "Mare e Monti²/⁷",
+        "price": "16,50 €",
+        "description": "mit Pilzen, Garnelen in Cherrytomaten-Sahnesoße"
+      },
+      {
+        "type": "item",
+        "name": "Amatriciana²/⁷",
+        "price": "13,90 €",
+        "description": "mit Guanciale, Zwiebeln in Tomatensahnesoße"
+      },
+      {
+        "type": "subtitle",
+        "name": "Tortelloni¹/³/⁷",
+        "description": "mit Fleischfüllu"
+      },
+      {
+        "type": "item",
+        "name": "Panna e Prosciutto",
+        "price": "13,00 €",
+        "description": "mit Schinken in Sahnesoße"
+      },
+      {
+        "type": "item",
+        "name": "Milano",
+        "price": "15,00 €",
+        "description": "mit Spinat und Gorgonzola in Sahnesoße"
+      },
+      {
+        "type": "subtitle",
+        "name": "Rigatoni¹",
+        "description": ""
+      },
+      {
+        "type": "item",
+        "name": "Quattro Formaggi",
+        "price": "14,90€",
+        "description": "vier Käsesorten in Sahne"
+      },
+      {
+        "type": "item",
+        "name": "Art des Hauses",
+        "price": "14,90 €",
+        "description": "mit Erbsen, Pilzen, Hinterschinken in Tomatensahnesoße"
+      },
+      {
+        "type": "item",
+        "name": "Diavola",
+        "price": "16,50 €",
+        "description": "mit Guanciale, Salsiccia, Paprika in Tomatensoße (pikant)"
+      },
+      {
+        "type": "item",
+        "name": "Broccoli",
+        "price": "14,90 €",
+        "description": "mit Sahne, Gorgonzola und Broccoli"
+      },
+      {
+        "type": "subtitle",
+        "name": "Gnocchi¹/³",
+        "description": "selbstgemachter Kartoffeleig"
+      },
+      {
+        "type": "item",
+        "name": "Al Gorgonzola⁷",
+        "price": "14,90 €",
+        "description": "gorgonzola und Sahne"
+      },
+      {
+        "type": "item",
+        "name": "Primavera⁷",
+        "price": "14,50 €",
+        "description": "mozzarella, Rucola, frisches Gemüse in Cherrytomatensoße"
+      },
+      {
+        "type": "item",
+        "name": "Sorrentina⁷",
+        "price": "13,90 €",
+        "description": "tomatensoße, Mozzarella und Basilikum"
+      },
+      {
+        "type": "subtitle",
+        "name": "Tagliatelle¹/³",
+        "description": "frische hausgemachte Nudeln"
+      },
+      {
+        "type": "item",
+        "name": "Al Salmone⁴/⁷",
+        "price": "16,90 €",
+        "description": "mit frischem Lachs, Zucchini, Knoblauch in Tomatensahnesoße"
+      },
+      {
+        "type": "item",
+        "name": "Parma⁷",
+        "price": "16,90 €",
+        "description": "mit Parmaschinken und grünem Spargel in Sahnesoße"
+      },
+      {
+        "type": "item",
+        "name": "Montecorvo²/⁷",
+        "price": "19,00 €",
+        "description": "mit Steinpilzen, Garnelen, Parmaschinken in Sahnesoße"
+      },
+      {
+        "type": "subtitle",
+        "name": "Tagliolini¹/³",
+        "description": "frische hausgemachte Nudeln"
+      },
+      {
+        "type": "item",
+        "name": "Scampi²",
+        "price": "21,00 €",
+        "description": "mit Cherry-Tomaten, Knoblauch und Petersilie"
+      },
+      {
+        "type": "item",
+        "name": "Al Salmone affumicato⁴/⁷",
+        "price": "16,90 €",
+        "description": "mit geräuchertem Lachs, Knoblauch in Tomatensahnesoße"
+      },
+      {
+        "type": "item",
+        "name": "Amalfi",
+        "price": "23,00 €",
+        "description": "mit Langustini, Jakobsmuschel in Langustinicremesoße"
+      },
+      {
+        "type": "item",
+        "name": "Bufala",
+        "price": "17,00 €",
+        "description": "Tomatensoße und Büffelmozzarella"
+      },
+      {
+        "type": "subtitle",
+        "name": "Spaghetti¹/³",
+        "description": ""
+      },
+      {
+        "type": "item",
+        "name": "Aglio e Olio",
+        "price": "12,00 €",
+        "description": "mit Olivenöl, Knoblauch und Petersilie scharf"
+      },
+      {
+        "type": "item",
+        "name": "Bologna",
+        "price": "12,50 €",
+        "description": "mit Hackfleisch (vom Rind) und Tomatensoße"
+      },
+      {
+        "type": "item",
+        "name": "Carbonara³/⁷",
+        "price": "15,00 €",
+        "description": "mit Guanciale, Ei, Parmesan (ohne Sahne)"
+      },
+      {
+        "type": "item",
+        "name": "Frutti di Mare²/⁴/¹⁴",
+        "price": "23,00 €",
+        "description": "mit Meeresfrüchten, Cherry-Tomaten und Knoblauch"
+      },
+      {
+        "type": "item",
+        "name": "Vongole",
+        "price": "21,00 €",
+        "description": "mit Venusmuscheln, Kirschtomaten, Kräutern, Knoblauch in Weißweinsoße (leicht pikant)"
+      },
+      {
+        "type": "item",
+        "name": "Cacio e Pepe",
+        "price": "15,00 €",
+        "description": "mit Pecorino und Pfeffer"
+      },
+      {
+        "type": "item",
+        "name": "Miesmuscheln",
+        "price": "18,00 €",
+        "description": "mit Knoblauch und Kräutern in Tomatensoße"
+      }
+    ]
+  },
+  {
+    "title": "Fleisch",
+    "entries": [
+      {
+        "type": "subtitle",
+        "name": "Rumpsteak",
+        "description": "Argentinisches Black Angus ca. 250 gr."
+      },
+      {
+        "type": "item",
+        "name": "Alla Griglia",
+        "price": "31,00 €",
+        "description": "vom Grill"
+      },
+      {
+        "type": "item",
+        "name": "Ai Porcini⁷",
+        "price": "33,90 €",
+        "description": "mit Knoblauch, Steinpilzen in Sahnesoße"
+      },
+      {
+        "type": "item",
+        "name": "Al Pepe",
+        "price": "32,90 €",
+        "description": "mit grünem Pfeffer in Sahnesoße"
+      },
+      {
+        "type": "item",
+        "name": "Tagliata Classica",
+        "price": "33,50 €",
+        "description": "Angus in Streifen mit Rucola, Parmesan"
+      },
+      {
+        "type": "subtitle",
+        "name": "Kalb",
+        "description": "Kalbsrückenmedaillons"
+      },
+      {
+        "type": "item",
+        "name": "Saltimbocca",
+        "price": "29,90 €",
+        "description": "mit Salbei, Parmaschinken in Weißweinsoße"
+      },
+      {
+        "type": "item",
+        "name": "Al Limone",
+        "price": "28,90 €",
+        "description": "in Zitronensoße"
+      },
+      {
+        "type": "item",
+        "name": "Valdostana",
+        "price": "29,90 €",
+        "description": "mit Käse überbacken in Champignon-Sahnesoße"
+      },
+      {
+        "type": "subtitle",
+        "name": "Tacchino",
+        "description": "Putenbrust"
+      },
+      {
+        "type": "item",
+        "name": "Alla Griglia",
+        "price": "23,90 €",
+        "description": "vom Grill"
+      },
+      {
+        "type": "item",
+        "name": "Funghi Panna",
+        "price": "26,90 €",
+        "description": "in Champignon-Sahnesoße"
+      },
+      {
+        "type": "item",
+        "name": "Al Limone",
+        "price": "26,90 €",
+        "description": "in Zitronensoße"
+      },
+      {
+        "type": "item",
+        "name": "Al Vino Bianco",
+        "price": "26,90 €",
+        "description": "in Weißweinsoße"
+      },
+      {
+        "type": "note",
+        "text": "Alle Fleisch- und Fischgerichte inklusive einer Beilage: Rosmarinkartoffeln, Beilagensalat oder Gemüse"
+      },
+      {
+        "type": "note",
+        "text": "Auf Wunsch mit Nudeln (5,00 € Aufpreis)."
+      },
+      {
+        "type": "note",
+        "text": "Sprechen Sie uns an, wenn Sie lieber eine kleinere Portion hätten (jeweils 1,00 € weniger)"
+      }
+    ]
+  },
+  {
+    "title": "Überbackenes",
+    "entries": [
+      {
+        "type": "item",
+        "name": "Rigatoni al Forno⁷",
+        "price": "14,00 €",
+        "description": "Tomaten-Hackfleischsoße mit Käse und Sahne"
+      },
+      {
+        "type": "item",
+        "name": "Rigatoni Amalfi al Forno⁷",
+        "price": "15,00 €",
+        "description": "mit Hackfleisch, Sahne, Ei, Erbsen, Pilzen und Hinterschinken"
+      },
+      {
+        "type": "item",
+        "name": "Cannelloni Carne⁷",
+        "price": "14,00 €",
+        "description": "mit Fleischfüllung in Tomatensahnesoße und Käse"
+      },
+      {
+        "type": "item",
+        "name": "Cannelloni Spinaci Ricotta⁷",
+        "price": "14,00 €",
+        "description": "mit Spinat-Käsefüllung in Tomatensahne und Käse"
+      },
+      {
+        "type": "item",
+        "name": "Lasagne Bologna⁷",
+        "price": "14,00 €",
+        "description": "mit Hackfleisch-Sahnesoße und Käse"
+      },
+      {
+        "type": "item",
+        "name": "Lasagne Vegetale⁷",
+        "price": "15,00 €",
+        "description": "mit frischem Gemüse in Tomatensahnesoße"
+      },
+      {
+        "type": "item",
+        "name": "Lasagne Amalfi⁷",
+        "price": "15,00 €",
+        "description": "mit Erbsen, Pilzen, Ei, Hinterschinken in Hackfleisch-Sahnesoße"
+      },
+      {
+        "type": "item",
+        "name": "Lasagne Frutti di Mare²⁴/⁷/¹⁴",
+        "price": "18,00 €",
+        "description": "mit Meeresfrüchten, Knoblauch in Tomatensahnesoße, leicht scharf"
+      },
+      {
+        "type": "item",
+        "name": "Lasagne Salmone e Broccoli³/⁷",
+        "price": "16,00€",
+        "description": "mit Lachs, Brokkoli, Knoblauch in Tomatensahnesoße"
+      },
+      {
+        "type": "note",
+        "text": "¹ Glutenhaltiges Getreide, ² Krebstiere, ³ Eier, ⁴ Fisch, ⁶ Erdnüsse, ⁸ Sojabohnen,"
+      },
+      {
+        "type": "note",
+        "text": "⁷ Milch, Sahne (einschließlich Laktose), ⁸ Schalenfrüchte (Pistazien, Mandeln, Haselnüsse, Walnüsse),"
+      },
+      {
+        "type": "note",
+        "text": "⁹ Sellerie, ¹⁰ Senf, ¹¹ Sesamsamen, ¹² Schwefeldioxid, ¹³ Lupinen (Feigbohne, Wolfsbohne, Familie d. Hülsenfrüchte),"
+      },
+      {
+        "type": "note",
+        "text": "¹⁴ Weichtiere (Schnecken, Kalmar, Kraken, Muscheln, Sepien), Riesengarnelen, Tintenfische und gefrorene Ware"
+      },
+      {
+        "type": "note",
+        "text": "Sprechen Sie uns an, wenn Sie lieber eine kleinere Portion hätten(jeweils 1,00 € weniger)."
+      }
+    ]
+  },
+  {
+    "title": "Fisch",
+    "entries": [
+      {
+        "type": "subtitle",
+        "name": "Fischgerichte²/⁴/¹⁴",
+        "description": ""
+      },
+      {
+        "type": "item",
+        "name": "Gemischte Fischplatte vom Grill",
+        "price": "32,00 €",
+        "description": "Garnelen, Calamari, Lachs, Seeteufel, Schwertfisch"
+      },
+      {
+        "type": "subtitle",
+        "name": "Tintenfisch¹⁴",
+        "description": ""
+      },
+      {
+        "type": "item",
+        "name": "Alla Griglia",
+        "price": "22,90 €",
+        "description": "vom Grill mit Knoblauch"
+      },
+      {
+        "type": "item",
+        "name": "Livornese",
+        "price": "25,90 €",
+        "description": "mit Oliven, Knoblauch, Zwiebeln, Kapern in Tomatensoße"
+      },
+      {
+        "type": "subtitle",
+        "name": "Lachs⁴",
+        "description": "vom Grill"
+      },
+      {
+        "type": "item",
+        "name": "Alla Griglia",
+        "price": "24,00 €",
+        "description": "vom Grill"
+      },
+      {
+        "type": "item",
+        "name": "Al Vino Bianco",
+        "price": "26,90 €",
+        "description": "mit Knoblauch in Weißweinsoße"
+      },
+      {
+        "type": "item",
+        "name": "Al Arancia",
+        "price": "28,90 €",
+        "description": "in Orangensoße und Garnelen"
+      },
+      {
+        "type": "subtitle",
+        "name": "Riesengarnelen²",
+        "description": ""
+      },
+      {
+        "type": "item",
+        "name": "Alla Griglia",
+        "price": "32,00 €",
+        "description": "vom Grill mit Kräutern"
+      },
+      {
+        "type": "item",
+        "name": "All Limone e Menta",
+        "price": "35,00 €",
+        "description": "in Knoblauchsoße, Zitrone und Minze"
+      },
+      {
+        "type": "note",
+        "text": "Alle Fleisch- und Fischgerichte inklusive einer Beilage:"
+      },
+      {
+        "type": "note",
+        "text": "Rosmarinkartoffeln, Beilagensalat oder Gemüse"
+      },
+      {
+        "type": "note",
+        "text": "Auf Wunsch mit Nudeln (5,00 € Aufpreis)."
+      },
+      {
+        "type": "note",
+        "text": "Sprechen Sie uns an, wenn Sie lieber eine kleinere Portion hätten"
+      },
+      {
+        "type": "note",
+        "text": "(jeweils 1,00 € weniger)."
+      }
+    ]
+  },
+  {
+    "title": "Risotto",
+    "entries": [
+      {
+        "type": "item",
+        "name": "Ai Porcini",
+        "price": "18,00 €",
+        "description": "mit Steinpilzen, Knoblauch, Zwiebeln und Cherry-Tomaten"
+      },
+      {
+        "type": "item",
+        "name": "Frutti di Mare²/⁴/¹⁴",
+        "price": "23,00 €",
+        "description": "mit Meeresfrüchten, Knoblauch und Cherry-Tomaten"
+      },
+      {
+        "type": "item",
+        "name": "Allo Zafferano",
+        "price": "23,00 €",
+        "description": "mit Jakobsmuscheln und Safran in Butter-Parmesancremesoße"
+      }
+    ]
+  },
+  {
+    "title": "Pizza (Ø 30 cm)",
+    "entries": [
+      {
+        "type": "item",
+        "name": "Pizzabrot",
+        "price": "8,50 €",
+        "description": "mit Tomatensoße und Oregano"
+      },
+      {
+        "type": "item",
+        "name": "Pizzabrot",
+        "price": "8,90 €",
+        "description": "mit Tomatensoße, Knoblauch und Oregano"
+      },
+      {
+        "type": "item",
+        "name": "Margherita⁷",
+        "price": "9,90 €",
+        "description": "Tomatensoße, Käse und Basiliko"
+      },
+      {
+        "type": "item",
+        "name": "Napoli⁴",
+        "price": "11,00 €",
+        "description": "Tomatensoße, Käse, Sardellen und Oliven"
+      },
+      {
+        "type": "item",
+        "name": "Calabria⁷",
+        "price": "13,50 €",
+        "description": "Käse, Gorgonzola und scharfe Salami"
+      },
+      {
+        "type": "item",
+        "name": "Diavola⁷",
+        "price": "13,50 €",
+        "description": "Tomatensoße, Käse, milde Peperoni, Paprika und scharfe Salami"
+      },
+      {
+        "type": "item",
+        "name": "Quattro Stagioni (Vier Jahreszeiten)⁷",
+        "price": "13,50 €",
+        "description": "Tomatensoße, Käse, Schinken, Salami, Pilze und Artischocken"
+      },
+      {
+        "type": "item",
+        "name": "Contadina⁷",
+        "price": "13,50 €",
+        "description": "Tomatensoße, Käse, Hinterschinken und Spiegelei"
+      },
+      {
+        "type": "item",
+        "name": "Vegetale (vegetarisch)⁷",
+        "price": "14,00 €",
+        "description": "Tomatensoße, Käse und frisches Tagesgemüse"
+      },
+      {
+        "type": "item",
+        "name": "Quattro Formaggi⁷",
+        "price": "14,00 €",
+        "description": "vier verschiedene Käsesorten"
+      },
+      {
+        "type": "item",
+        "name": "Tonno⁴/⁷",
+        "price": "13,00 €",
+        "description": "Tomatensoße, Käse, Thunfisch und Zwiebeln"
+      },
+      {
+        "type": "item",
+        "name": "Parma⁷",
+        "price": "14,90 €",
+        "description": "Tomatensoße, Käse, Parmaschinken, Rucola und Parmesan"
+      },
+      {
+        "type": "item",
+        "name": "Marinara²/⁴/¹⁴",
+        "price": "17,00 €",
+        "description": "Tomatensoße, Knoblauch und frische Meeresfrüchte"
+      },
+      {
+        "type": "item",
+        "name": "Scampi²/⁷",
+        "price": "17,00 €",
+        "description": "Tomatensoße, Käse, Knoblauch, Krabben und Scampi"
+      },
+      {
+        "type": "item",
+        "name": "Amalfi⁷",
+        "price": "15,00 €",
+        "description": "Tomatensoße, Käse, Salami, Hinterschinken, Pilze, Peperoni, Paprika und gekochtem Ei"
+      },
+      {
+        "type": "item",
+        "name": "Salmone⁴/⁷",
+        "price": "16,00 €",
+        "description": "Tomatensoße, Käse, geräucherter Lachs, Rucola und Parmesan"
+      },
+      {
+        "type": "item",
+        "name": "Rucola",
+        "price": "13,00 €",
+        "description": "Tomatensoße, Käse, Rucola, Cherry-Tomaten und Parmesan"
+      },
+      {
+        "type": "item",
+        "name": "Tartufo",
+        "price": "25,00 €",
+        "description": "Mozzarella, Steinpilze, Parmaschinken und schwarzen Trüffel"
+      },
+      {
+        "type": "note",
+        "text": "Auf Wunsch teilen wir Ihre Pizza auf zwei Teller – 2,50 € Aufpreis."
+      }
+    ]
+  },
+  {
+    "title": "Getränke",
+    "entries": [
+      {
+        "type": "subtitle",
+        "name": "Alkohlfreie Getränke",
+        "description": ""
+      },
+      {
+        "type": "item",
+        "name": "San Pellegrino",
+        "price": "0,5 l 4,60 € | 0,7 l 6,20 €",
+        "description": ""
+      },
+      {
+        "type": "item",
+        "name": "Acqua Panna",
+        "price": "0,5 l 4,60 € | 0,7 l 6,20 €",
+        "description": ""
+      },
+      {
+        "type": "item",
+        "name": "Coca Cola³",
+        "price": "0,2 l 3,40 € | 0,4 l 4,60 €",
+        "description": ""
+      },
+      {
+        "type": "item",
+        "name": "Fanta³",
+        "price": "0,2 l 3,40 € | 0,4 l 4,60 €",
+        "description": ""
+      },
+      {
+        "type": "item",
+        "name": "Spezi³/¹²",
+        "price": "0,2 l 3,40 € | 0,4 l 4,60 €",
+        "description": ""
+      },
+      {
+        "type": "item",
+        "name": "Sprite³",
+        "price": "0,2 l 3,40 € | 0,4 l 4,60 €",
+        "description": ""
+      },
+      {
+        "type": "item",
+        "name": "Bitterlemon⁴",
+        "price": "0,2 l 3,40 € | 0,4 l 4,60 €",
+        "description": ""
+      },
+      {
+        "type": "item",
+        "name": "Orangensaft",
+        "price": "0,2 l 3,50 € | 0,4 l 5,00 €",
+        "description": ""
+      },
+      {
+        "type": "item",
+        "name": "Apfelsaft",
+        "price": "0,2 l 3,50 € | 0,4 l 5,00 €",
+        "description": ""
+      },
+      {
+        "type": "item",
+        "name": "Traubensaft",
+        "price": "0,2 l 3,50 € | 0,4 l 5,00€",
+        "description": ""
+      },
+      {
+        "type": "item",
+        "name": "Johannisbeernektar",
+        "price": "0,2 l 3,50 € | 0,4 l 5,00 €",
+        "description": ""
+      },
+      {
+        "type": "item",
+        "name": "Maracujasaft",
+        "price": "0,2 l 3,50 € | 0,4 l 5,00 €",
+        "description": ""
+      },
+      {
+        "type": "item",
+        "name": "Schorle",
+        "price": "0,2 l 3,00 € | 0,4 l 4,50 €",
+        "description": ""
+      },
+      {
+        "type": "subtitle",
+        "name": "Bier vom Fass",
+        "description": ""
+      },
+      {
+        "type": "item",
+        "name": "Pils",
+        "price": "0,3 l 4,00 €",
+        "description": ""
+      },
+      {
+        "type": "item",
+        "name": "Helles",
+        "price": "0,5 l 4,90 €",
+        "description": ""
+      },
+      {
+        "type": "subtitle",
+        "name": "Flaschenbiere",
+        "description": ""
+      },
+      {
+        "type": "item",
+        "name": "Gutmann Weizenbier dunkel",
+        "price": "0,5 l 4,90 €",
+        "description": ""
+      },
+      {
+        "type": "item",
+        "name": "Gutmann Weizen alkoholfrei",
+        "price": "0,5 l 4,90 €",
+        "description": ""
+      },
+      {
+        "type": "item",
+        "name": "Cola-Weizen",
+        "price": "0,5 l 4,90 €",
+        "description": ""
+      },
+      {
+        "type": "item",
+        "name": "Gutmann Hefe",
+        "price": "0,5 l 4,90 €",
+        "description": ""
+      },
+      {
+        "type": "item",
+        "name": "Radler",
+        "price": "0,5 l 4,90 €",
+        "description": ""
+      },
+      {
+        "type": "item",
+        "name": "Dunkles Export",
+        "price": "0,5 l 4,90 €",
+        "description": ""
+      },
+      {
+        "type": "item",
+        "name": "Russ",
+        "price": "0,5 l 4,90 €",
+        "description": ""
+      },
+      {
+        "type": "subtitle",
+        "name": "Rotwein (offen 0,2 l)",
+        "description": ""
+      },
+      {
+        "type": "item",
+        "name": "Chianti",
+        "price": "7,00 €",
+        "description": ""
+      },
+      {
+        "type": "item",
+        "name": "Primitivo",
+        "price": "7,00 €",
+        "description": ""
+      },
+      {
+        "type": "item",
+        "name": "Lambrusco",
+        "price": "6,00 €",
+        "description": ""
+      },
+      {
+        "type": "item",
+        "name": "Barbera d’Asti",
+        "price": "7,00 €",
+        "description": ""
+      },
+      {
+        "type": "subtitle",
+        "name": "Weißwein (offen 0,2 l)",
+        "description": ""
+      },
+      {
+        "type": "item",
+        "name": "Pinot Grigio",
+        "price": "7,00 €",
+        "description": ""
+      },
+      {
+        "type": "item",
+        "name": "Chardonnay",
+        "price": "7,00 €",
+        "description": ""
+      },
+      {
+        "type": "item",
+        "name": "Rosé",
+        "price": "7,00€",
+        "description": ""
+      },
+      {
+        "type": "item",
+        "name": "Schorle",
+        "price": "4,50 €",
+        "description": ""
+      },
+      {
+        "type": "item",
+        "name": "Lugana",
+        "price": "7,00 €",
+        "description": ""
+      },
+      {
+        "type": "item",
+        "name": "Frascati",
+        "price": "7,00 €",
+        "description": ""
+      },
+      {
+        "type": "subtitle",
+        "name": "Spirituosen (2 cl)",
+        "description": ""
+      },
+      {
+        "type": "item",
+        "name": "Ramazzotti",
+        "price": "4,00€",
+        "description": ""
+      },
+      {
+        "type": "item",
+        "name": "Fernet Branca",
+        "price": "4,00€",
+        "description": ""
+      },
+      {
+        "type": "item",
+        "name": "Averna",
+        "price": "4,00€",
+        "description": ""
+      },
+      {
+        "type": "item",
+        "name": "Sambuca",
+        "price": "4,00€",
+        "description": ""
+      },
+      {
+        "type": "item",
+        "name": "Williamsbirne",
+        "price": "4,00€",
+        "description": ""
+      },
+      {
+        "type": "item",
+        "name": "Vecchia Romagna",
+        "price": "4,50€",
+        "description": ""
+      },
+      {
+        "type": "item",
+        "name": "Limoncello",
+        "price": "4,00€",
+        "description": ""
+      },
+      {
+        "type": "subtitle",
+        "name": "Warme Getränke auf Wunsch auch koffeinfrei",
+        "description": ""
+      },
+      {
+        "type": "item",
+        "name": "Glas Tee",
+        "price": "3,00 €",
+        "description": ""
+      },
+      {
+        "type": "item",
+        "name": "Espresso",
+        "price": "3,00 €",
+        "description": ""
+      },
+      {
+        "type": "item",
+        "name": "Espresso Doppio",
+        "price": "4,50 €",
+        "description": ""
+      },
+      {
+        "type": "item",
+        "name": "Tasse Kaffee",
+        "price": "3,90 €",
+        "description": ""
+      },
+      {
+        "type": "item",
+        "name": "Cappuccino",
+        "price": "4,00 €",
+        "description": ""
+      },
+      {
+        "type": "item",
+        "name": "Latte Macchiato",
+        "price": "4,50€",
+        "description": ""
+      }
+    ]
+  },
+  {
+    "title": "Dolci",
+    "entries": [
+      {
+        "type": "item",
+        "name": "Tiramisu Classico",
+        "price": "6,50 €",
+        "description": ""
+      },
+      {
+        "type": "item",
+        "name": "Panna Cotta mit heißen Himbeeren",
+        "price": "6,50 €",
+        "description": ""
+      },
+      {
+        "type": "item",
+        "name": "Crème brûlée",
+        "price": "6,50 €",
+        "description": ""
+      },
+      {
+        "type": "item",
+        "name": "Schoko Soufflé mit Vanilleeis",
+        "price": "7,00 €",
+        "description": ""
+      },
+      {
+        "type": "item",
+        "name": "Tartufo Classico",
+        "price": "5,00 €",
+        "description": ""
+      },
+      {
+        "type": "note",
+        "text": "¹ mit Farbstoff ² Konservierungsstoffe"
+      },
+      {
+        "type": "note",
+        "text": "³ koffeinhaltig ⁴ chininhaltig"
+      },
+      {
+        "type": "note",
+        "text": "⁵ Süßungsmittel ⁸ Antioxidationsmittel"
+      },
+      {
+        "type": "note",
+        "text": "⁹ geschwefelt ¹² geschwärzt"
+      }
+    ]
+  }
+]

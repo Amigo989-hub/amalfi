@@ -1,0 +1,407 @@
+.hero-brand {
+  display: inline-flex;
+  width: 230px;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 0 24px;
+}
+
+.hero-brand img {
+  width: 225px;
+  height: 86px;
+  object-fit: contain;
+  filter: none;
+}
+
+.hero-brand span {
+  margin-top: -9px;
+  color: #ead6bd;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .32em;
+  text-transform: uppercase;
+}
+
+.about-brand-panel {
+  position: relative;
+  display: grid;
+  width: 100%;
+  height: 590px;
+  place-items: center;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 50% 46%, rgba(189,139,74,.28), transparent 38%),
+    linear-gradient(145deg, #55231e, #241310 78%);
+}
+
+.about-brand-panel::after {
+  position: absolute;
+  inset: 22px;
+  border: 1px solid rgba(255,255,255,.16);
+  content: "";
+  pointer-events: none;
+}
+
+.about-brand-panel > span {
+  position: absolute;
+  top: 46px;
+  z-index: 2;
+  color: #dfbd87;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .25em;
+  text-transform: uppercase;
+}
+
+.about-brand-panel .about-main {
+  width: 92%;
+  height: auto;
+  object-fit: contain;
+  filter: none;
+}
+
+.location {
+  background:
+    linear-gradient(90deg, rgba(243,237,226,.97) 0%, rgba(243,237,226,.9) 33%, rgba(243,237,226,.12) 66%),
+    url('/images/restaurant-interior.jpg') 58% center / cover no-repeat;
+}
+
+@media (max-width: 760px) {
+  .hero-content {
+    padding-top: 74px;
+  }
+
+  .hero-brand {
+    width: 172px;
+    margin-bottom: 18px;
+  }
+
+  .hero-brand img {
+    width: 170px;
+    height: 68px;
+  }
+
+  .hero-brand span {
+    margin-top: -8px;
+    font-size: 8px;
+  }
+
+  .hero-content h1 {
+    font-size: clamp(42px, 12vw, 58px);
+    line-height: 1.02;
+  }
+
+  .hero-content .actions {
+    display: grid;
+    width: 100%;
+    grid-template-columns: 1fr;
+  }
+
+  .hero-content .button {
+    width: 100%;
+  }
+
+  .about-images {
+    padding: 0 30px 38px 0;
+  }
+
+  .about-brand-panel {
+    height: 410px;
+  }
+
+  .about-brand-panel::after {
+    inset: 14px;
+  }
+
+  .about-brand-panel > span {
+    top: 31px;
+  }
+
+  .about-brand-panel .about-main {
+    width: 105%;
+  }
+
+  .about-small {
+    width: 135px;
+    height: 170px;
+    border-width: 7px;
+  }
+
+  .location {
+    min-height: 650px;
+    align-items: end;
+    background:
+      linear-gradient(0deg, rgba(243,237,226,.98) 0%, rgba(243,237,226,.86) 40%, rgba(243,237,226,.08) 72%),
+      url('/images/restaurant-interior.jpg') 60% center / cover no-repeat;
+  }
+
+  .location-card {
+    padding: 28px;
+  }
+}
+
+@media (max-width: 390px) {
+  .hero-content h1 {
+    font-size: 40px;
+  }
+
+  .about-brand-panel {
+    height: 360px;
+  }
+
+  .location {
+    min-height: 610px;
+  }
+}
+
+.gallery-hero {
+  background-image: url('/images/restaurant-interior.jpg');
+}
+
+.gallery-section {
+  padding-block: 110px 130px;
+}
+
+.gallery-intro {
+  display: grid;
+  grid-template-columns: .5fr 1.2fr .7fr;
+  gap: 45px;
+  align-items: end;
+  margin-bottom: 55px;
+}
+
+.gallery-intro h2 {
+  margin: 0;
+  font-size: clamp(40px, 5vw, 66px);
+  letter-spacing: -.035em;
+}
+
+.gallery-intro > p:last-child {
+  margin: 0;
+  color: var(--muted);
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-auto-rows: 210px;
+  gap: 18px;
+}
+
+.gallery-item {
+  position: relative;
+  grid-column: span 4;
+  overflow: hidden;
+  border: 0;
+  padding: 0;
+  background: var(--cream);
+  cursor: zoom-in;
+}
+
+.gallery-item-1 {
+  grid-column: span 7;
+  grid-row: span 2;
+}
+
+.gallery-item-2 {
+  grid-column: span 5;
+  grid-row: span 2;
+}
+
+.gallery-item-3 {
+  grid-column: span 5;
+}
+
+.gallery-item-4 {
+  grid-column: span 4;
+}
+
+.gallery-item-5 {
+  grid-column: span 3;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .45s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.035);
+}
+
+.gallery-item span {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  padding: 8px 11px;
+  background: rgba(255,253,249,.92);
+  color: var(--wine);
+  font-size: 10px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+}
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: grid;
+  place-items: center;
+  padding: 35px;
+  background: rgba(20,10,8,.94);
+}
+
+.lightbox img {
+  max-width: min(1200px, 94vw);
+  max-height: 88vh;
+  object-fit: contain;
+}
+
+.lightbox button {
+  position: fixed;
+  top: 18px;
+  right: 22px;
+  border: 0;
+  background: transparent;
+  color: white;
+  font-size: 44px;
+  cursor: pointer;
+}
+
+.checkout-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 90;
+  display: flex;
+  justify-content: flex-end;
+  background: rgba(29,14,11,.66);
+}
+
+.checkout-panel {
+  width: min(560px, 100%);
+  height: 100%;
+  overflow-y: auto;
+  padding: 55px 42px;
+  background: var(--paper);
+  box-shadow: -20px 0 60px rgba(30,15,12,.22);
+}
+
+.checkout-close {
+  float: right;
+  border: 0;
+  background: transparent;
+  color: var(--wine);
+  font-size: 34px;
+  cursor: pointer;
+}
+
+.checkout-panel h2 {
+  margin: 12px 0 25px;
+  font-size: 44px;
+}
+
+.checkout-lines {
+  margin-bottom: 30px;
+  border-block: 1px solid var(--line);
+}
+
+.checkout-lines > div {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 10px 0;
+  font-size: 13px;
+}
+
+.checkout-panel form > label:not(.consent) {
+  display: block;
+  margin-bottom: 16px;
+  font-size: 11px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+}
+
+.checkout-panel input:not([type="checkbox"]),
+.checkout-panel textarea {
+  width: 100%;
+  margin-top: 6px;
+  padding: 13px;
+  border: 1px solid var(--line);
+  background: white;
+  outline: 0;
+}
+
+.checkout-panel input:focus,
+.checkout-panel textarea:focus {
+  border-color: var(--wine);
+}
+
+.checkout-panel .consent {
+  margin: 18px 0;
+}
+
+.checkout-panel small {
+  display: block;
+  margin-top: 12px;
+  color: var(--muted);
+  text-align: center;
+}
+
+.checkout-result {
+  padding: 22px;
+  background: #edf1e8;
+}
+
+.form-honeypot {
+  position: absolute !important;
+  left: -9999px !important;
+  width: 1px !important;
+  height: 1px !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+@media (max-width: 760px) {
+  .gallery-section {
+    padding-block: 75px 90px;
+  }
+
+  .gallery-intro {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    margin-bottom: 35px;
+  }
+
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-auto-rows: 280px;
+    gap: 12px;
+  }
+
+  .gallery-item,
+  .gallery-item-1,
+  .gallery-item-2,
+  .gallery-item-3,
+  .gallery-item-4,
+  .gallery-item-5 {
+    grid-column: 1;
+    grid-row: auto;
+  }
+
+  .lightbox {
+    padding: 15px;
+  }
+
+  .checkout-panel {
+    padding: 38px 20px 90px;
+  }
+
+  .checkout-panel h2 {
+    font-size: 38px;
+  }
+}
