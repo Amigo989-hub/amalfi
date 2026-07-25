@@ -65,7 +65,7 @@ function Home() {
 
     <section className="about wrap" id="ueber-uns">
       <div className="about-images">
-        <div className="about-brand-panel"><span>Dal cuore d'Italia</span><img className="about-main" src="/images/dish.png" alt="Ristorante Amalfi" /></div>
+        <div className="about-brand-panel"><span>Dal cuore d'Italia</span><img className="about-main" src="/images/dish.webp" alt="Ristorante Amalfi" /></div>
         <img className="about-small" src="/images/interior.webp" alt="Terrasse des Ristorante Amalfi in Dinkelsbühl" />
       </div>
       <div className="about-copy"><p className="eyebrow dark">La dolce vita in Dinkelsbühl</p><h2>Ristorante Amalfi – in der schönen Altstadt</h2>
@@ -91,30 +91,68 @@ function Home() {
 }
 
 const gallery = [
-  { src: "/images/restaurant-interior.jpg", alt: "Bar und Gastraum im Ristorante Amalfi" },
-  { src: "/images/hero.webp", alt: "Italienisches Ambiente im Ristorante Amalfi" },
-  { src: "/images/interior.webp", alt: "Terrasse mit Blick auf die Dinkelsbühler Altstadt" },
-  { src: "/images/dish.png", alt: "Italienische Spezialität im Ristorante Amalfi" },
-  { src: "/images/menu.jpg", alt: "Frisch zubereitete Gerichte des Ristorante Amalfi" },
+  { src: "/images/gallery-01.webp", alt: "Eingang zum Ristorante Amalfi in Dinkelsbühl" },
+  { src: "/images/gallery-02.webp", alt: "Heller Gastraum und Bar des Ristorante Amalfi" },
+  { src: "/images/gallery-03.webp", alt: "Gedeckter Tisch im italienischen Restaurant" },
+  { src: "/images/gallery-04.webp", alt: "Sitzplätze an der Bar im Ristorante Amalfi" },
+  { src: "/images/gallery-05.webp", alt: "Mediterrane Details und Steinbogen im Gastraum" },
+  { src: "/images/gallery-06.webp", alt: "Frische Blumen an der Bar des Restaurants" },
+  { src: "/images/gallery-07.webp", alt: "Barbereich mit italienischem Ambiente" },
+  { src: "/images/gallery-08.webp", alt: "Frische Langustinen für die mediterrane Küche" },
+  { src: "/images/gallery-09.webp", alt: "Fisch und Meeresfrüchte mit Kräutern und Zitrone" },
+  { src: "/images/gallery-10.webp", alt: "Gegrillter Fisch und Garnelen mit Kartoffeln" },
+  { src: "/images/gallery-11.webp", alt: "Mediterrane Vorspeisenplatte mit Meeresfrüchten" },
+  { src: "/images/gallery-12.webp", alt: "Fisch, Fleisch und Meeresfrüchte vom Grill" },
+  { src: "/images/gallery-13.webp", alt: "Große Meeresfrüchteplatte mit gegrilltem Gemüse" },
+  { src: "/images/gallery-14.webp", alt: "Frische Pasta mit Garnelen und Calamari" },
+  { src: "/images/gallery-15.webp", alt: "Risotto mit Muscheln und Garnelen" },
+  { src: "/images/gallery-16.webp", alt: "Frittierte Fischspezialitäten mit Zitrone" },
+  { src: "/images/gallery-17.webp", alt: "Gebratene Garnelen mit Tomaten und Rosmarin" },
+  { src: "/images/gallery-18.webp", alt: "Safranrisotto mit gegrilltem Oktopus" },
+  { src: "/images/gallery-19.webp", alt: "Pasta mit Meeresfrüchten aus der Pfanne" },
+  { src: "/images/gallery-20.webp", alt: "Spaghetti mit Garnelen und Calamari" },
+  { src: "/images/gallery-21.webp", alt: "Miesmuscheln in mediterranem Sud" },
+  { src: "/images/gallery-22.webp", alt: "Frische Tagliolini mit Calamari" },
+  { src: "/images/gallery-23.webp", alt: "Gegrillte Dorade mit mediterranem Gemüse" },
+  { src: "/images/gallery-24.webp", alt: "Große Garnelen mit Pasta und Zitrone" },
+  { src: "/images/gallery-25.webp", alt: "Pasta mit Krabbe in Tomatensauce" },
+  { src: "/images/gallery-26.webp", alt: "Frische Krabbe auf Rucola" },
+  { src: "/images/gallery-27.webp", alt: "Auswahl an frischen Meeresfrüchten" },
 ];
 
 function GalleryPage() {
-  const [selected, setSelected] = useState(null);
+  const [selectedIndex, setSelectedIndex] = useState(null);
+  const selected = selectedIndex === null ? null : gallery[selectedIndex];
+  const showImage = (direction) => setSelectedIndex((current) => (current + direction + gallery.length) % gallery.length);
   useEffect(() => {
     if (!selected) return undefined;
-    const close = (event) => event.key === "Escape" && setSelected(null);
-    window.addEventListener("keydown", close);
-    return () => window.removeEventListener("keydown", close);
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    const handleKey = (event) => {
+      if (event.key === "Escape") setSelectedIndex(null);
+      if (event.key === "ArrowLeft") showImage(-1);
+      if (event.key === "ArrowRight") showImage(1);
+    };
+    window.addEventListener("keydown", handleKey);
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      window.removeEventListener("keydown", handleKey);
+    };
   }, [selected]);
   return <Shell>
     <section className="page-hero gallery-hero"><div><p className="eyebrow">Ein Blick ins Amalfi</p><h1>Unsere Galerie</h1><p>Italienische Gastlichkeit, mediterraner Genuss und ein besonderer Platz mitten in Dinkelsbühl.</p></div></section>
     <section className="gallery-section wrap">
-      <div className="gallery-intro"><p className="eyebrow dark">Benvenuti</p><h2>Ein Ort zum Ankommen und Genießen.</h2><p>Öffnen Sie ein Bild, um es größer anzusehen.</p></div>
+      <div className="gallery-intro"><p className="eyebrow dark">27 Momente aus dem Amalfi</p><h2>Ein Ort zum Ankommen und Genießen.</h2><p>Einblicke in unser Restaurant und frisch zubereitete Spezialitäten. Tippen Sie auf ein Bild, um es größer anzusehen.</p></div>
       <div className="gallery-grid">
-        {gallery.map((image, index) => <button type="button" key={image.src} className={`gallery-item gallery-item-${index + 1}`} onClick={() => setSelected(image)}><img src={image.src} alt={image.alt} loading={index > 1 ? "lazy" : "eager"} /><span>Bild öffnen</span></button>)}
+        {gallery.map((image, index) => <button type="button" key={image.src} className={`gallery-item gallery-item-${index + 1}`} onClick={() => setSelectedIndex(index)} aria-label={`${image.alt} vergrößern`}><img src={image.src} alt={image.alt} loading={index > 3 ? "lazy" : "eager"} /><span>Bild öffnen</span></button>)}
       </div>
     </section>
-    {selected && <div className="lightbox" role="dialog" aria-modal="true" aria-label="Vergrößerte Galerieansicht" onClick={() => setSelected(null)}><button type="button" aria-label="Galerie schließen" onClick={() => setSelected(null)}>×</button><img src={selected.src} alt={selected.alt} onClick={(event) => event.stopPropagation()} /></div>}
+    {selected && <div className="lightbox" role="dialog" aria-modal="true" aria-label="Vergrößerte Galerieansicht" onClick={() => setSelectedIndex(null)}>
+      <button className="lightbox-close" type="button" aria-label="Galerie schließen" onClick={() => setSelectedIndex(null)}>×</button>
+      <button className="lightbox-arrow lightbox-prev" type="button" aria-label="Vorheriges Bild" onClick={(event) => { event.stopPropagation(); showImage(-1); }}>‹</button>
+      <figure onClick={(event) => event.stopPropagation()}><img src={selected.src} alt={selected.alt} /><figcaption>{selectedIndex + 1} / {gallery.length}</figcaption></figure>
+      <button className="lightbox-arrow lightbox-next" type="button" aria-label="Nächstes Bild" onClick={(event) => { event.stopPropagation(); showImage(1); }}>›</button>
+    </div>}
   </Shell>;
 }
 

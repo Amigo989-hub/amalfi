@@ -158,6 +158,10 @@
   background-image: url('/images/restaurant-interior.jpg');
 }
 
+.menu-hero {
+  background-image: url('/images/dish.webp');
+}
+
 .gallery-section {
   padding-block: 110px 130px;
 }
@@ -404,4 +408,89 @@
   .checkout-panel h2 {
     font-size: 38px;
   }
+}
+
+.gallery-grid {
+  grid-auto-flow: dense;
+}
+
+.gallery-item-6 { grid-column: span 7; }
+.gallery-item-7 { grid-column: span 5; }
+.gallery-item-8 { grid-column: span 8; grid-row: span 2; }
+.gallery-item-9 { grid-column: span 4; grid-row: span 2; }
+.gallery-item-14 { grid-column: span 5; grid-row: span 2; }
+.gallery-item-15 { grid-column: span 7; grid-row: span 2; }
+.gallery-item-20 { grid-column: span 8; grid-row: span 2; }
+.gallery-item-21 { grid-column: span 4; grid-row: span 2; }
+.gallery-item-25 { grid-column: span 5; grid-row: span 2; }
+.gallery-item-26 { grid-column: span 7; grid-row: span 2; }
+.gallery-item-27 { grid-column: 1 / -1; grid-row: span 2; }
+
+.lightbox {
+  grid-template-columns: 72px minmax(0, 1fr) 72px;
+}
+
+.lightbox figure {
+  margin: 0;
+  text-align: center;
+}
+
+.lightbox figure img {
+  margin: auto;
+}
+
+.lightbox figcaption {
+  margin-top: 12px;
+  color: rgba(255,255,255,.72);
+  font-size: 12px;
+  letter-spacing: .12em;
+}
+
+.lightbox .lightbox-close {
+  position: fixed;
+  top: 18px;
+  right: 22px;
+}
+
+.lightbox .lightbox-arrow {
+  position: static;
+  width: 56px;
+  height: 56px;
+  border: 1px solid rgba(255,255,255,.32);
+  border-radius: 50%;
+  background: rgba(255,255,255,.06);
+  font-size: 40px;
+  line-height: 1;
+}
+
+.lightbox .lightbox-next {
+  justify-self: end;
+}
+
+@media (max-width: 760px) {
+  .gallery-grid .gallery-item {
+    grid-column: 1;
+    grid-row: auto;
+  }
+
+  .lightbox {
+    grid-template-columns: 1fr;
+    padding: 54px 15px 82px;
+  }
+
+  .lightbox figure img {
+    max-width: 100%;
+    max-height: 74vh;
+  }
+
+  .lightbox .lightbox-arrow {
+    position: fixed;
+    top: auto;
+    bottom: 17px;
+    width: 48px;
+    height: 48px;
+  }
+
+  .lightbox .lightbox-prev { left: calc(50% - 60px); }
+  .lightbox .lightbox-next { right: calc(50% - 60px); }
 }
