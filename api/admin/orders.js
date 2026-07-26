@@ -3,6 +3,8 @@ const { parseBody, requireStaff, text } = require("../_lib/shared");
 const STATUSES = new Set(["new", "accepted", "preparing", "ready", "completed", "cancelled"]);
 
 module.exports = async (req, res) => {
+  res.setHeader("Cache-Control", "no-store");
+  res.setHeader("Vary", "Authorization");
   const access = await requireStaff(req, res);
   if (!access) return;
   if (req.method === "GET") {
@@ -21,4 +23,3 @@ module.exports = async (req, res) => {
   }
   return res.status(405).json({ error: "Methode nicht erlaubt." });
 };
-

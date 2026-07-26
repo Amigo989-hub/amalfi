@@ -1,6 +1,21 @@
 const { randomBytes } = require("node:crypto");
 const { getSupabaseAdmin, parseBody, text, email } = require("./_lib/shared");
 const { sendOrderEmails } = require("./_lib/mailer");
+const menu = require("../src/data/menu.json");
+
+const menuItems = new Map();
+for (const section of menu) {
+  for (const entry of section.entries || []) {
+    if (entry.type === "item") menuItems.set(`${section.title}\u0000${entry.name}`, entry);
+  }
+}
+
+function priceToCents(value) {
+  const match = String(value || "").match(/(\d+(?:[.,]\d{1,2}))/);
+  if (!match) return null;
+  const amount = Number(match[1].replace(",", "."));
+  return Number.isFinite(amount) ? Math.round(amount * 100) : null;
+}
 
 module.exports = async (req, res) => {
   if (req.method !== "POST") return res.status(405).json({ error: "Methode nicht erlaubt." });
@@ -15,12 +30,18 @@ module.exports = async (req, res) => {
   const fulfillment = body.fulfillment === "delivery" ? "delivery" : "pickup";
   const address = fulfillment === "delivery" ? text(body.address, 500) : "";
   const items = Array.isArray(body.items)
-    ? body.items.slice(0, 50).map((item) => ({
-        name: text(item.name, 180),
-        quantity: Math.max(1, Math.min(30, Number(item.quantity) || 1)),
-        price: text(item.price, 80),
-        section: text(item.section, 120),
-      })).filter((item) => item.name)
+    ? body.items.slice(0, 50).map((item) => {
+        const name = text(item.name, 180);
+        const section = text(item.section, 120);
+        const trusted = menuItems.get(`${section}\u0000${name}`);
+        if (!trusted) return null;
+        return {
+          name,
+          quantity: Math.max(1, Math.min(30, Number(item.quantity) || 1)),
+          price: text(trusted.price, 80),
+          section,
+        };
+      }).filter(Boolean)
     : [];
 
   if (!customerName || !phone || !customerEmail || !requestedTime || !items.length) {
@@ -30,6 +51,13 @@ module.exports = async (req, res) => {
   try {
     const admin = getSupabaseAdmin();
     const orderNumber = `AM-${new Date().toISOString().slice(2, 10).replaceAll("-", "")}-${randomBytes(2).toString("hex").toUpperCase()}`;
+    const itemTotals = items.map((item) => {
+      const unitPrice = priceToCents(item.price);
+      return unitPrice === null ? null : unitPrice * item.quantity;
+    });
+    const totalCents = itemTotals.some((value) => value === null)
+      ? null
+      : itemTotals.reduce((sum, value) => sum + value, 0);
     const order = {
       order_number: orderNumber,
       customer_name: customerName,
@@ -40,6 +68,7 @@ module.exports = async (req, res) => {
       requested_time: requestedTime,
       items,
       comment: comment || null,
+      total_cents: totalCents,
       status: "new",
       email_sent: false,
     };
@@ -60,4 +89,3 @@ module.exports = async (req, res) => {
     return res.status(500).json({ error: "Die Bestellung konnte gerade nicht gespeichert werden. Bitte rufen Sie uns an." });
   }
 };
-

@@ -142,7 +142,7 @@ function GalleryPage() {
   return <Shell>
     <section className="page-hero gallery-hero"><div><p className="eyebrow">Ein Blick ins Amalfi</p><h1>Unsere Galerie</h1><p>Italienische Gastlichkeit, mediterraner Genuss und ein besonderer Platz mitten in Dinkelsbühl.</p></div></section>
     <section className="gallery-section wrap">
-      <div className="gallery-intro"><p className="eyebrow dark">27 Momente aus dem Amalfi</p><h2>Ein Ort zum Ankommen und Genießen.</h2><p>Einblicke in unser Restaurant und frisch zubereitete Spezialitäten. Tippen Sie auf ein Bild, um es größer anzusehen.</p></div>
+      <div className="gallery-intro"><h2>Ein Ort zum Ankommen und Genießen.</h2><p>Einblicke in unser Restaurant und frisch zubereitete Spezialitäten. Tippen Sie auf ein Bild, um es größer anzusehen.</p></div>
       <div className="gallery-grid">
         {gallery.map((image, index) => <button type="button" key={image.src} className={`gallery-item gallery-item-${index + 1}`} onClick={() => setSelectedIndex(index)} aria-label={`${image.alt} vergrößern`}><img src={image.src} alt={image.alt} loading={index > 3 ? "lazy" : "eager"} /><span>Bild öffnen</span></button>)}
       </div>
@@ -178,7 +178,9 @@ function OrderCheckout({ items, onClose, onSuccess }) {
       const response = await fetch("/api/orders", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(payload) });
       const result = await response.json().catch(() => ({}));
       if (!response.ok) throw new Error(result.error || "Die Bestellung konnte nicht gesendet werden.");
-      setStatus(`Vielen Dank! Ihre Bestellung ${result.orderNumber} wurde übermittelt. Eine Bestätigung wurde an Ihre E-Mail-Adresse gesendet.`);
+      setStatus(result.emailSent
+        ? `Vielen Dank! Ihre Bestellung ${result.orderNumber} wurde übermittelt. Eine Bestätigung wurde an Ihre E-Mail-Adresse gesendet.`
+        : `Vielen Dank! Ihre Bestellung ${result.orderNumber} wurde sicher übermittelt. Falls die E-Mail etwas später ankommt, ist Ihre Anfrage trotzdem gespeichert.`);
       onSuccess();
     } catch (error) {
       setStatus(error.message);
@@ -260,7 +262,9 @@ function ReservationPage() {
       });
       const result = await response.json().catch(() => ({}));
       if (!response.ok) throw new Error(result.error || "Die Reservierung konnte nicht gesendet werden.");
-      setStatus("Vielen Dank! Ihre Reservierungsanfrage wurde übermittelt. Sie erhalten eine Bestätigung per E-Mail. Die Reservierung ist nach Bestätigung durch das Restaurant verbindlich.");
+      setStatus(result.emailSent
+        ? "Vielen Dank! Ihre Reservierungsanfrage wurde übermittelt. Sie erhalten eine Bestätigung per E-Mail. Die Reservierung ist nach Bestätigung durch das Restaurant verbindlich."
+        : "Vielen Dank! Ihre Reservierungsanfrage wurde sicher gespeichert. Falls die E-Mail etwas später ankommt, ist Ihre Anfrage trotzdem beim Restaurant eingegangen.");
       formElement.reset();
     } catch (error) {
       setStatus(error.message);

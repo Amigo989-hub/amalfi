@@ -3,6 +3,8 @@ const { parseBody, requireStaff, text } = require("../_lib/shared");
 const STATUSES = new Set(["new", "confirmed", "completed", "cancelled"]);
 
 module.exports = async (req, res) => {
+  res.setHeader("Cache-Control", "no-store");
+  res.setHeader("Vary", "Authorization");
   const access = await requireStaff(req, res);
   if (!access) return;
   if (req.method === "GET") {

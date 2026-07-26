@@ -168,20 +168,24 @@
 
 .gallery-intro {
   display: grid;
-  grid-template-columns: .5fr 1.2fr .7fr;
-  gap: 45px;
+  grid-template-columns: minmax(0, 1.15fr) minmax(320px, .85fr);
+  gap: clamp(45px, 7vw, 110px);
   align-items: end;
   margin-bottom: 55px;
 }
 
 .gallery-intro h2 {
   margin: 0;
+  max-width: 720px;
   font-size: clamp(40px, 5vw, 66px);
   letter-spacing: -.035em;
+  line-height: 1.02;
 }
 
 .gallery-intro > p:last-child {
   margin: 0;
+  max-width: 520px;
+  justify-self: end;
   color: var(--muted);
 }
 
@@ -378,6 +382,10 @@
     grid-template-columns: 1fr;
     gap: 14px;
     margin-bottom: 35px;
+  }
+
+  .gallery-intro > p:last-child {
+    justify-self: start;
   }
 
   .gallery-grid {
