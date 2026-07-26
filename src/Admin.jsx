@@ -72,6 +72,43 @@ function Login({ onSession }) {
   );
 }
 
+function PasswordSetup({ onComplete }) {
+  const [password, setPassword] = useState("");
+  const [confirmation, setConfirmation] = useState("");
+  const [error, setError] = useState("");
+  const [busy, setBusy] = useState(false);
+
+  const submit = async (event) => {
+    event.preventDefault();
+    if (password.length < 10) return setError("Das Passwort muss mindestens 10 Zeichen lang sein.");
+    if (password !== confirmation) return setError("Die beiden Passwörter stimmen nicht überein.");
+    setBusy(true);
+    setError("");
+    const { error: updateError } = await supabase.auth.updateUser({ password });
+    setBusy(false);
+    if (updateError) return setError("Das Passwort konnte nicht gespeichert werden. Bitte öffnen Sie den Einladungslink erneut.");
+    window.history.replaceState({}, "", "/admin");
+    onComplete();
+  };
+
+  return (
+    <main className="admin-login">
+      <section className="admin-login-card">
+        <img src="/images/logo.png" alt="Ristorante Amalfi" />
+        <p className="eyebrow dark">Einladung angenommen</p>
+        <h1>Passwort festlegen</h1>
+        <p>Wählen Sie ein sicheres Passwort für den Mitarbeiterbereich.</p>
+        <form onSubmit={submit}>
+          <label>Neues Passwort<input type="password" value={password} onChange={(event) => setPassword(event.target.value)} required minLength="10" autoComplete="new-password" /></label>
+          <label>Passwort wiederholen<input type="password" value={confirmation} onChange={(event) => setConfirmation(event.target.value)} required minLength="10" autoComplete="new-password" /></label>
+          {error && <p className="admin-error">{error}</p>}
+          <button className="button primary full" disabled={busy}>{busy ? "Wird gespeichert …" : "Passwort speichern"}</button>
+        </form>
+      </section>
+    </main>
+  );
+}
+
 function StatusButtons({ value, statuses, onChange, busy }) {
   return (
     <div className="status-buttons" aria-label="Status ändern">
@@ -144,9 +181,10 @@ function Reservations({ rows, updateStatus, updating }) {
   );
 }
 
-export default function Admin() {
+export default function Admin({ inviteMode = false }) {
   const [session, setSession] = useState(null);
   const [checking, setChecking] = useState(true);
+  const [needsPassword, setNeedsPassword] = useState(inviteMode);
   const [tab, setTab] = useState("orders");
   const [orders, setOrders] = useState([]);
   const [reservations, setReservations] = useState([]);
@@ -223,6 +261,7 @@ export default function Admin() {
   if (checking) return <main className="admin-loading">Adminbereich wird geladen …</main>;
   if (!supabase) return <main className="admin-loading">Die Supabase-Verbindung ist noch nicht eingerichtet.</main>;
   if (!session) return <Login onSession={setSession} />;
+  if (needsPassword) return <PasswordSetup onComplete={() => setNeedsPassword(false)} />;
 
   const newOrders = orders.filter((row) => row.status === "new").length;
   const newReservations = reservations.filter((row) => row.status === "new").length;
@@ -250,4 +289,3 @@ export default function Admin() {
     </main>
   );
 }
-

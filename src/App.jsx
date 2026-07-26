@@ -291,6 +291,7 @@ function NotFound() { return <Shell><section className="not-found wrap"><p class
 export default function App() {
   const getPath = () => window.location.pathname.replace(/\/$/, "") || "/";
   const [path, setPath] = useState(getPath);
+  const [inviteMode] = useState(() => window.location.hash.includes("type=invite"));
 
   useEffect(() => {
     const syncRoute = () => setPath(getPath());
@@ -313,6 +314,7 @@ export default function App() {
     };
   }, []);
 
+  if (inviteMode) return <Admin inviteMode />;
   if (path === "/") return <Home />;
   if (path === "/speisekarte") return <MenuPage />;
   if (path === "/form") return <ReservationPage />;
