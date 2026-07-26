@@ -80,7 +80,6 @@ function Home() {
       <div className="wrap hours-grid">
         <div><p className="eyebrow">Öffnungszeiten</p><h2>Zeit für einen Abend wie in Italien.</h2><p>Alle Speisen werden frisch zubereitet. Daher bitten wir um Verständnis, wenn es gelegentlich etwas länger dauert.</p><a className="button light" href="/form">Jetzt reservieren</a></div>
         <div className="hours-card"><h3>Reguläre Öffnungszeiten</h3><div><span>Montag</span><b>Ruhetag</b></div><div><span>Dienstag</span><b>17:30–22:00 Uhr</b></div><div><span>Mittwoch–Sonntag</span><b>11:30–14:30 Uhr<br />17:30–22:00 Uhr</b></div><p>Küchenschluss kann abweichen. Rufen Sie uns bei Fragen gerne an.</p></div>
-        <div className="hours-card special"><span className="badge">Kinderzeche</span><h3>Besondere Öffnungszeiten</h3><div><span>Montag</span><b>geöffnet</b></div><div><span>Dienstag</span><b>ganztägig geöffnet</b></div><div><span>Mittwoch</span><b>Ruhetag</b></div><div><span>Donnerstag</span><b>ab 17:30 Uhr</b></div></div>
       </div>
     </section>
 
