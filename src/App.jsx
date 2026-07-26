@@ -291,7 +291,10 @@ function NotFound() { return <Shell><section className="not-found wrap"><p class
 export default function App() {
   const getPath = () => window.location.pathname.replace(/\/$/, "") || "/";
   const [path, setPath] = useState(getPath);
-  const [inviteMode] = useState(() => window.location.hash.includes("type=invite"));
+  const [inviteMode] = useState(() => {
+    const authRedirect = `${window.location.hash}&${window.location.search}`;
+    return authRedirect.includes("type=invite") || authRedirect.includes("type=recovery");
+  });
 
   useEffect(() => {
     const syncRoute = () => setPath(getPath());
