@@ -22,41 +22,27 @@
   text-transform: uppercase;
 }
 
-.about-brand-panel {
+.about-photo-frame {
   position: relative;
-  display: grid;
   width: 100%;
   height: 590px;
-  place-items: center;
   overflow: hidden;
-  background:
-    radial-gradient(circle at 50% 46%, rgba(189,139,74,.28), transparent 38%),
-    linear-gradient(145deg, #55231e, #241310 78%);
+  background: #e9dfd3;
 }
 
-.about-brand-panel::after {
+.about-photo-frame::after {
   position: absolute;
-  inset: 22px;
-  border: 1px solid rgba(255,255,255,.16);
+  inset: 16px;
+  border: 1px solid rgba(255,255,255,.72);
   content: "";
   pointer-events: none;
 }
 
-.about-brand-panel > span {
-  position: absolute;
-  top: 46px;
-  z-index: 2;
-  color: #dfbd87;
-  font-size: 10px;
-  font-weight: 800;
-  letter-spacing: .25em;
-  text-transform: uppercase;
-}
-
-.about-brand-panel .about-main {
-  width: 92%;
-  height: auto;
-  object-fit: contain;
+.about-photo-frame .about-main {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
   filter: none;
 }
 
@@ -105,20 +91,12 @@
     padding: 0 30px 38px 0;
   }
 
-  .about-brand-panel {
+  .about-photo-frame {
     height: 410px;
   }
 
-  .about-brand-panel::after {
+  .about-photo-frame::after {
     inset: 14px;
-  }
-
-  .about-brand-panel > span {
-    top: 31px;
-  }
-
-  .about-brand-panel .about-main {
-    width: 105%;
   }
 
   .about-small {
@@ -145,7 +123,7 @@
     font-size: 40px;
   }
 
-  .about-brand-panel {
+  .about-photo-frame {
     height: 360px;
   }
 
@@ -159,7 +137,8 @@
 }
 
 .menu-hero {
-  background-image: url('/images/dish.webp');
+  background-image: url('/images/gallery-12.webp');
+  background-position: center 52%;
 }
 
 .gallery-section {
