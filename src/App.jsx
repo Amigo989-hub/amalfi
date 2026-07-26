@@ -38,7 +38,7 @@ function Footer() {
   </footer>;
 }
 
-function Shell({ children }) { return <><Header /><main>{children}</main><Footer /><a className="floating-call" href={`tel:${PHONE}`} aria-label="Restaurant anrufen">☎</a></>; }
+function Shell({ children }) { return <><Header /><main>{children}</main><Footer /></>; }
 
 function Home() {
   return <Shell>
