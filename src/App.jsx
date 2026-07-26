@@ -66,7 +66,7 @@ function Home() {
     <section className="about wrap" id="ueber-uns">
       <div className="about-images">
         <div className="about-photo-frame"><img className="about-main" src="/images/gallery-02.webp" alt="Heller Gastraum und Bar des Ristorante Amalfi" /></div>
-        <img className="about-small" src="/images/gallery-03.webp" alt="Gedeckter Tisch im Ristorante Amalfi" />
+        <img className="about-small" src="/images/terrace-lamp.jpg" alt="Leuchtende Terrassenlaterne mit Blick auf die Dinkelsbühler Altstadt" />
       </div>
       <div className="about-copy"><p className="eyebrow dark">La dolce vita in Dinkelsbühl</p><h2>Ristorante Amalfi – in der schönen Altstadt</h2>
         <p>Hier erwartet Sie eine Reise durch die italienische Küche mit traditionellen Gerichten, modernen mediterranen Kreationen und ausgesuchten italienischen Weinen.</p>
