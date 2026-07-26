@@ -117,6 +117,13 @@ const gallery = [
   { src: "/images/gallery-25.webp", alt: "Pasta mit Krabbe in Tomatensauce" },
   { src: "/images/gallery-26.webp", alt: "Frische Krabbe auf Rucola" },
   { src: "/images/gallery-27.webp", alt: "Auswahl an frischen Meeresfrüchten" },
+  { src: "/images/gallery-28.jpg", alt: "Pasta mit Garnelen in feiner Orangensauce" },
+  { src: "/images/gallery-29.jpg", alt: "Salat mit Burrata, Avocado und Prosciutto" },
+  { src: "/images/gallery-30.jpg", alt: "Frische Pasta in cremiger Zitronensauce" },
+  { src: "/images/gallery-31.jpg", alt: "Gegrillte Fisch- und Meeresfrüchteplatte" },
+  { src: "/images/gallery-32.jpg", alt: "Pizza mit Burrata, Prosciutto und Mandeln" },
+  { src: "/images/gallery-33.jpg", alt: "Fleischmedaillons im Speckmantel auf Safransauce" },
+  { src: "/images/gallery-34.jpg", alt: "Safranrisotto mit gebratenen Jakobsmuscheln" },
 ];
 
 function GalleryPage() {
