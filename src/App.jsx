@@ -218,7 +218,10 @@ function MenuPage() {
   const visible = menu.filter(s => active === "Alle" || s.title === active).map(section => ({...section, entries: section.entries.filter(e => e.type !== "item" || `${e.name} ${e.description}`.toLowerCase().includes(query.toLowerCase()))})).filter(s => s.entries.some(e => e.type === "item"));
   const cartItems = useMemo(() => Object.values(cart).filter(x => x.quantity > 0), [cart]);
   const count = cartItems.reduce((n, x) => n + x.quantity, 0);
-  const change = (key, item, section, delta) => setCart(current => ({...current, [key]: {...item, section, quantity: Math.max(0, (current[key]?.quantity || 0) + delta)}}));
+  const change = (key, item, section, delta) => {
+    const quantity = Math.max(0, (cart[key]?.quantity || 0) + delta);
+    setCart({...cart, [key]: {...item, section, quantity}});
+  };
   return <Shell>
     <section className="page-hero menu-hero"><div><p className="eyebrow">Von Aperitif bis Dolci</p><h1>Unsere Speisekarte</h1><p>Italienische Klassiker, frische Pasta, frischer Fisch und frische Meeresfrüchte.</p></div></section>
     <section className="menu-tools wrap" id="bestellen"><div className="category-scroll"><button className={active === "Alle" ? "active" : ""} onClick={() => setActive("Alle")}>Alle</button>{categories.map(c => <button key={c} className={active === c ? "active" : ""} onClick={() => setActive(c)}>{c}</button>)}</div><label className="search"><span>⌕</span><input value={query} onChange={e => setQuery(e.target.value)} placeholder="Gericht suchen …" /></label></section>
